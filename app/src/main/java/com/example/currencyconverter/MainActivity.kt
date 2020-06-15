@@ -90,14 +90,16 @@ class MainActivity : AppCompatActivity() {
             spinner2.adapter = adapter
         }
 
-
+        var text : TextView = findViewById(R.id.textView2)
+        text.textSize = 30F;
         var et : TextView = findViewById(R.id.textView);
+        et.textSize = 30F;
         button.setOnClickListener() {
-            if (editTextNumberSigned.text.toString() != "") {
-                val value : Float = editTextNumberSigned.text.toString().toFloat();
+            if (editTextNumberDecimal.text.toString() != "") {
+                val value : Float = editTextNumberDecimal.text.toString().toFloat();
                 val curr1 : String = spinner1.getSelectedItem().toString()
                 val curr2 : String = spinner2.getSelectedItem().toString()
-                et.setText("The result: ${convert(curr1, value, curr2)}")
+                et.setText("${value} ${curr1} = \n${convert(curr1, value, curr2)} ${curr2}")
             }
         }
     }
